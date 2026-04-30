@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MAXIPARTES Bolivia - Catálogo completo de repuestos automotrices originales.">
+    <title>Catálogo Completo | MAXIPARTES Bolivia</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/diseño.css">
+    <link rel="stylesheet" href="/assets/css/carusel-marcas.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/general/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    
+    <!-- navbar.js applies dark mode ASAP to avoid flash -->
+    <script src="/assets/js/navbar.js"></script>
+
+    <style>
+        /* Estilos específicos para el encabezado del catálogo */
+        .catalog-hero {
+            background-color: var(--mp-bg-light);
+            border-bottom: 1px solid var(--mp-border);
+            padding: 3.5rem 0 2rem;
+            margin-bottom: 2rem;
+        }
+        .catalog-hero h1 {
+            font-weight: 900;
+            color: var(--mp-navy);
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+        }
+        .catalog-hero p {
+            color: var(--mp-slate);
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+        html.dark .catalog-hero h1 { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ NAVBAR (compartida via navbar.js) ═══ -->
+    <div id="navbar-container"></div>
+
+    <!-- ═══ ENCABEZADO CATÁLOGO ═══ -->
+    <header class="catalog-hero">
+        <div class="container">
+            <h1 class="mb-2">Búsqueda Avanzada de Repuestos</h1>
+            <p class="mb-0">Encuentra precisión y compatibilidad garantizada para tu vehículo explorando nuestro extenso catálogo de autopartes por marca o categoría.</p>
+        </div>
+    </header>
+
+    <!-- ═══ CATÁLOGO COMPLETO ═══ -->
+    <section class="productos pb-5" id="productos">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- ── Panel lateral de filtros ── -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="filter-panel">
+                        <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                            <h6 class="mb-0 border-bottom-0 pb-0"><i class="bi bi-sliders"></i> Filtros</h6>
+                            <button class="btn btn-link text-decoration-none text-mp-red p-0 shadow-none d-md-none" style="font-size: .8rem; font-weight: 600;" onclick="document.getElementById('btn-clear-filter').click()">Limpiar</button>
+                        </div>
+
+                        <!-- Búsqueda -->
+                        <p class="filter-section-label">Buscar por nombre o Ref</p>
+                        <div class="filter-search-wrap">
+                            <input type="text" id="buscador-productos"
+                                class="filter-search-input"
+                                placeholder="Escribe aquí...">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <!-- Marca de vehículo -->
+                        <p class="filter-section-label">Marca de Vehículo compatibles</p>
+                        <ul class="filter-check-list" id="brand-filter-list">
+                            <li><label><input type="checkbox" value="Suzuki"> Suzuki</label></li>
+                            <li><label><input type="checkbox" value="Changan"> Changan</label></li>
+                            <li><label><input type="checkbox" value="Chevrolet"> Chevrolet</label></li>
+                            <li><label><input type="checkbox" value="Gac"> Gac</label></li>
+                            <li><label><input type="checkbox" value="Renault"> Renault</label></li>
+                            <li><label><input type="checkbox" value="Mazda"> Mazda</label></li>
+                            <li><label><input type="checkbox" value="Peugeot"> Peugeot</label></li>
+                            <!-- <li><label><input type="checkbox" value="Tata"> Renault</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Mitsubishi"> Mitsubishi</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Toyota"> Toyota</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Nissan"> Nissan</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Hyundai"> Hyundai</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Kia"> Kia</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Foton"> Foton</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Mazda"> Mazda</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Subaru"> Subaru</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Volkswagen"> Volkswagen</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Audi"> Audi</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Universal"> Universal</label></li> -->
+                        </ul>
+
+                        <!-- Categoría -->
+                        <p class="filter-section-label">Categoría del Sistema</p>
+                        <select class="filter-select" id="category-select">
+                            <option value="all">Todas las Categorías</option>
+                            <option value="motor">Motor</option>
+                            <!-- <option value="suspension">Suspensión</option> -->
+                            <option value="filtros">Filtros</option>
+                            <option value="frenos">Frenos</option>
+                            <option value="embrague">Embrague</option>
+                            <!-- <option value="aceites">Aceites</option> -->
+                            <option value="direccion">Dirección</option>
+                            <!-- <option value="refrigeracion">Refrigeración</option> -->
+                            <option value="electricidad">Electricidad</option>
+                            <!-- <option value="transmision">Transmisión</option> -->
+                            <option value="accesorios">Accesorios</option>
+                            <option value="carroceria">Carrocería</option>
+                            <option value="iluminacion">Iluminacion</option>
+                        </select>
+
+                        <button class="btn-apply-filter mt-2" id="btn-apply-filter">
+                            <i class="bi bi-funnel-fill me-1"></i> Aplicar Filtros
+                        </button>
+                        <button class="btn-clear-filter d-none d-md-block" id="btn-clear-filter">
+                            <i class="bi bi-x-circle me-1"></i> Limpiar todos los filtros
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── Grid de productos ── -->
+                <div class="col-lg-9 col-md-8">
+                    <!-- Categorías rápidas (móvil/tablet) -->
+                    <div class="categoria-scroll d-md-none mb-3" style="overflow-x: auto; white-space: nowrap;">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn active" data-category="all">Todos</button>
+                            <button type="button" class="btn" data-category="motor">Motor</button>
+                            <!-- <button type="button" class="btn" data-category="suspension">Suspensión</button> -->
+                            <button type="button" class="btn" data-category="filtros">Filtros</button>
+                            <button type="button" class="btn" data-category="frenos">Frenos</button>
+                            <!-- <button type="button" class="btn" data-category="aceites">Aceites</button> -->
+                            <button type="button" class="btn" data-category="electricidad">Electricidad</button>
+                            <button type="button" class="btn" data-category="carroceria">Carrocería</button>
+                            <button type="button" class="btn" data-category="accesorios">Accesorios</button>
+                            <button type="button" class="btn" data-category="iluminacion">Iluminación</button>
+                        </div>
+                    </div>
+
+                    <!-- Encabezado de la cuadrícula -->
+                    <div class="d-flex justify-content-between align-items-center mb-4 d-none d-md-flex">
+                        <p class="text-mp-slate m-0 fs-6">Mostrando resultados del catálogo</p>
+                    </div>
+
+                    <!-- Contenedor dinámico -->
+                    <div class="row" id="products-grid"></div>
+
+                    <!-- Sin resultados -->
+                    <div id="no-results" class="text-center py-5 d-none">
+                        <i class="bi bi-search fs-1 d-block mb-2 opacity-25"></i>
+                        <p class="fs-5 fw-medium text-mp-slate mb-3">No se encontraron productos con estos criterios.</p>
+                        <button class="btn btn-outline-danger btn-sm" onclick="document.getElementById('btn-clear-filter').click()">Limpiar filtros y ver todos</button>
+                    </div>
+
+                    <!-- Paginación -->
+                    <div id="pagination-container" class="d-flex justify-content-center pt-4 mt-3 border-top"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div id="footer-container"></div>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/productos.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/footer.js"></script>
+</body>
+</html>

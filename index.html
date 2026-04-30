@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MAXIPARTES Bolivia - Repuestos automotrices originales y certificados. Motor, suspensión, frenos, filtros y aceites para toda Bolivia.">
+    <title>MAXIPARTES Bolivia | Repuestos Automotrices</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/diseño.css">
+    <link rel="stylesheet" href="/assets/css/carusel-marcas.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/general/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    <!-- navbar.js applies dark mode ASAP to avoid flash -->
+    <script src="/assets/js/navbar.js"></script>
+</head>
+<body>
+
+    <!-- ═══ NAVBAR (compartida via navbar.js) ═══ -->
+    <div id="navbar-container"></div>
+
+    <!-- ═══ HERO — Carrusel ═══ -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/images/general/C_Maxipartes_12.webp" class="d-block w-100" alt="Repuestos automotrices Bolivia">
+                <div class="carousel-caption">
+                    <span class="badge-hero">Repuestos Originales &amp; Certificados</span>
+                    <h1>Calidad Garantizada<br>en Cada Parte.</h1>
+                    <p>Encuentra las mejores marcas de autopartes en un solo lugar. Motor, suspensión, filtros, frenos y más.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#productos" class="btn-hero-primary">Ver Catálogo <i class="bi bi-arrow-right"></i></a>
+                        <a href="/pages/contactenos.html" class="btn-hero-ghost">Contáctenos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/images/general/C_Maxipartes_14.webp" class="d-block w-100" alt="Variedad de repuestos" style="object-fit: cover; object-position: center 40%; position: center;">
+                <div class="carousel-caption">
+                    <span class="badge-hero">Todas las Marcas</span>
+                    <h1>Variedad de Productos<br>para tu Vehículo.</h1>
+                    <p>Disponibilidad de repuestos para todas las marcas y modelos del mercado boliviano.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#productos" class="btn-hero-primary">Explorar <i class="bi bi-arrow-right"></i></a>
+                        <a href="/pages/quienes_somos.html" class="btn-hero-ghost">Quiénes Somos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/images/general/C_Maxipartes_13.webp" class="d-block w-100" alt="Servicio especializado">
+                <div class="carousel-caption">
+                    <span class="badge-hero">Atención Personalizada</span>
+                    <h1>Servicio de Primera<br>para tu Flotilla.</h1>
+                    <p>Atención personalizada, soporte técnico especializado y entrega rápida en todo Bolivia.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/pages/contactenos.html" class="btn-hero-primary"><i class="bi bi-whatsapp"></i> Contáctanos</a>
+                        <a href="/pages/quienes_somos.html" class="btn-hero-ghost">Quiénes Somos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- ═══ PRODUCTOS DESTACADOS ═══ -->
+    <section class="featured-products" id="destacados">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="section-title mb-1">Productos Destacados</h2>
+                    <p class="section-subtitle mb-0">Nuestros componentes de alto rendimiento más solicitados.</p>
+                </div>
+                <a href="#productos" class="text-mp-red fw-semibold d-flex align-items-center gap-1 text-decoration-none">
+                    Ver todos <i class="bi bi-arrow-right-short fs-5"></i>
+                </a>
+            </div>
+            <!-- Grid de 4 cards generado por main.js -->
+            <div id="featured-grid" class="row g-4"></div>
+        </div>
+    </section>
+
+    <!-- ═══ CATÁLOGO COMPLETO ═══ -->
+    <section class="productos" id="productos">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="catalog-title">Catálogo de Productos</h2>
+                <div style="width:60px;height:4px;background:var(--mp-red);border-radius:2px;margin:.6rem auto 0;"></div>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- ── Panel lateral de filtros ── -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="filter-panel">
+                        <h6><i class="bi bi-sliders"></i> Filtros</h6>
+
+                        <!-- Búsqueda -->
+                        <p class="filter-section-label">Buscar</p>
+                        <div class="filter-search-wrap">
+                            <input type="text" id="buscador-productos"
+                                class="filter-search-input"
+                                placeholder="Nombre, código, marca...">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <!-- Marca de vehículo -->
+                        <p class="filter-section-label">Marca de Vehículo</p>
+                        <ul class="filter-check-list" id="brand-filter-list">
+                            <li><label><input type="checkbox" value="Suzuki"> Suzuki</label></li>
+                            <li><label><input type="checkbox" value="Changan"> Changan</label></li>
+                            <li><label><input type="checkbox" value="Chevrolet"> Chevrolet</label></li>
+                            <li><label><input type="checkbox" value="Gac"> Gac</label></li>
+                            <li><label><input type="checkbox" value="Renault"> Renault</label></li>
+                            <li><label><input type="checkbox" value="Mazda"> Mazda</label></li>
+                            <li><label><input type="checkbox" value="Peugeot"> Peugeot</label></li>
+                            <!-- <li><label><input type="checkbox" value="Toyota"> Toyota</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Nissan"> Nissan</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Hyundai"> Hyundai</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Kia"> Kia</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Foton"> Foton</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Mazda"> Mazda</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Subaru"> Subaru</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Volkswagen"> Volkswagen</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Audi"> Audi</label></li> -->
+                            <!-- <li><label><input type="checkbox" value="Universal"> Universal</label></li> -->
+                        </ul>
+
+                        <!-- Categoría -->
+                        <p class="filter-section-label">Categoría</p>
+                        <select class="filter-select" id="category-select">
+                            <option value="all">Todas las Categorías</option>
+                            <option value="motor">Motor</option>
+                            <option value="suspension">Suspensión</option>
+                            <option value="filtros">Filtros</option>
+                            <option value="frenos">Frenos</option>
+                            <option value="embrague">Embrague</option>
+                            <!-- <option value="aceites">Aceites</option> -->
+                            <option value="direccion">Dirección</option>
+                            <!-- <option value="refrigeracion">Refrigeración</option> -->
+                            <option value="electricidad">Electricidad</option>
+                            <!-- <option value="transmision">Transmisión</option> -->
+                            <option value="accesorios">Accesorios</option>
+                            <option value="carroceria">Carrocería</option>
+                            <option value="iluminacion">Iluminacion</option>
+                        </select>
+
+                        <button class="btn-apply-filter" id="btn-apply-filter">
+                            <i class="bi bi-funnel-fill me-1"></i> Aplicar Filtros
+                        </button>
+                        <button class="btn-clear-filter" id="btn-clear-filter">
+                            <i class="bi bi-x-circle me-1"></i> Limpiar filtros
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── Grid de productos ── -->
+                <div class="col-lg-9 col-md-8">
+                    <!-- Categorías rápidas (móvil/tablet) -->
+                        <div class="categoria-scroll d-md-none mb-3" style="overflow-x: auto; white-space: nowrap;">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn active" data-category="all">Todos</button>
+                                <button type="button" class="btn" data-category="motor">Motor</button>
+                                <button type="button" class="btn" data-category="suspension">Suspensión</button>
+                                <button type="button" class="btn" data-category="filtros">Filtros</button>
+                                <button type="button" class="btn" data-category="frenos">Frenos</button>
+                                <!-- <button type="button" class="btn" data-category="aceites">Aceites</button> -->
+                                <button type="button" class="btn" data-category="electricidad">Electricidad</button>
+                                <button type="button" class="btn" data-category="carroceria">Carrocería</button>
+                                <button type="button" class="btn" data-category="accesorios">Accesorios</button>
+                                <button type="button" class="btn" data-category="iluminacion">Iluminación</button>
+                            </div>
+                        </div>
+
+                    <!-- Contenedor dinámico -->
+                    <div class="row" id="products-grid"></div>
+
+                    <!-- Sin resultados -->
+                    <div id="no-results" class="text-center py-5 d-none">
+                        <i class="bi bi-search fs-1 d-block mb-2 opacity-25"></i>
+                        <p class="fs-5 text-muted">No se encontraron productos.</p>
+                        <button class="btn btn-outline-danger btn-sm" onclick="document.getElementById('btn-clear-filter').click()">Limpiar filtros</button>
+                    </div>
+
+                    <!-- Paginación -->
+                    <div id="pagination-container" class="d-flex justify-content-center py-4"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ VIDEO CORPORATIVO (Opción B) ═══ -->
+    <section class="corporate-video-section">
+        <div class="row g-0 align-items-stretch">
+            <!-- Columna Texto -->
+            <div class="col-lg-5 p-4 p-md-5 d-flex flex-column justify-content-center" style="background:#0f172a; color:#fff;">
+                <div style="max-width: 480px; margin: 0 auto;">
+                    <span style="display:inline-block; background:var(--mp-red); padding:0.4rem 1.2rem; border-radius:50px; font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:1.5rem; color:#fff;">
+                        Conócenos
+                    </span>
+                    <h2 class="fw-bold mb-3" style="font-size:clamp(1.8rem, 3vw, 2.5rem); line-height:1.2;">Tu Aliado Automotriz.</h2>
+                    <p class="mb-4 fs-6" style="opacity:.85; line-height:1.7;">
+                        Descubre por qué somos los líderes en distribución de repuestos a nivel nacional. Calidad, garantía y atención especializada en cada pieza que entregamos.
+                    </p>
+                    <a href="/pages/quienes_somos.html" class="btn btn-outline-light rounded-pill px-4 py-2" style="font-weight:600; border-width:2px;">
+                        Ver Quiénes Somos
+                    </a>
+                </div>
+            </div>
+            <!-- Columna Video -->
+            <div class="col-lg-7" style="background:#000; min-height:400px; max-height:560px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+                <video src="/assets/video/C_Maxipartes_video.mp4"
+                    style="width:100%; height:100%; object-fit:contain; display:block;"
+                    controls playsinline preload="metadata"
+                    poster="/assets/images/general/C_Maxiartes_01.webp">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ POR QUÉ ELEGIRNOS ═══ -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>MAXIPARTES: CALIDAD QUE MUEVE A BOLIVIA</h2>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon"><i class="bi bi-gear-wide-connected"></i></div>
+                        <h4>Expertos en Repuestos</h4>
+                        <p>Somos tu fuente confiable en Bolivia para autopartes de alta calidad. Con un profundo conocimiento del mercado local, te ofrecemos solo lo mejor para tu vehículo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon"><i class="bi bi-person-check-fill"></i></div>
+                        <h4>Asesoría Profesional</h4>
+                        <p>Nuestro equipo de apasionados por los autos está listo para guiarte. Te ayudamos a encontrar la pieza exacta que necesitas, asegurando compatibilidad y rendimiento.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon"><i class="bi bi-truck"></i></div>
+                        <h4>Soluciones Eficientes</h4>
+                        <p>Garantizamos respuestas rápidas y un servicio ágil. Encuentra variedad, disponibilidad y la eficiencia que necesitas para mantener tu vehículo en marcha sin demoras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ BENEFICIOS ═══ -->
+    <section class="best-features">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">¿Por qué elegirnos?</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-award-fill"></i>
+                        <h5>Calidad Premium</h5>
+                        <p>Solo trabajamos con las marcas más confiables del mercado.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-box-seam"></i>
+                        <h5>Variedad Infinita</h5>
+                        <p>Encuentra repuestos para cada marca, modelo y año.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-headset"></i>
+                        <h5>Asesoría Experta</h5>
+                        <p>Nuestro equipo te guía para elegir justo lo que necesitas.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-truck-front"></i>
+                        <h5>Entrega Exprés</h5>
+                        <p>Recibe tus pedidos rápido, en cualquier punto de Bolivia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div id="footer-container"></div>
+
+    <!-- ═══ Scripts ═══ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/productos.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/footer.js"></script>
+
+</body>
+</html>
+

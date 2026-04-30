@@ -1,0 +1,71 @@
+/* CSS moderno para el Slider Infinito en línea dentro del Navbar */
+
+.SliderInfinito {
+    overflow: hidden;
+    position: relative;
+    /* Difuminado suave en los bordes independientemente del color de fondo */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.slider-track {
+    display: flex;
+    width: calc(100px * 34); /* 17 marcas × 2 (duplicado) */
+    animation: scrollLogos 25s linear infinite;
+}
+
+.slide-logo {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+/* ── Modo claro: logos originales con efecto sutil ── */
+.slide-logo img {
+    max-width: 100%;
+    max-height: 25px;
+    filter: grayscale(30%);
+    opacity: 0.75;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slide-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ── Modo oscuro: logos PNG extraídos con fondo transparente ── */
+html.dark .slide-logo img {
+    filter: brightness(1.05) drop-shadow(0 0 2px rgba(255,255,255,0.08));
+    opacity: 0.85;
+}
+
+html.dark .slide-logo img:hover {
+    filter: brightness(1.2) drop-shadow(0 0 4px rgba(255,255,255,0.15));
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100px * 17)); /* 17 originales */ }
+}
+
+.SliderInfinito:hover .slider-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .slide-logo img {
+        filter: grayscale(30%);
+        opacity: 0.85;
+    }
+    html.dark .slide-logo img {
+        opacity: 0.9;
+    }
+}

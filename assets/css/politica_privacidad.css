@@ -1,0 +1,76 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Contenedor principal */
+.policy-container {
+  max-width: 850px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 35px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.policy-container h1 {
+  font-family: 'Lobster Two', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+.policy-container h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 4px solid #0d6efd;
+  padding-left: 10px;
+}
+
+.policy-container p,
+.policy-container li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+  margin-bottom: 15px;
+}
+
+.policy-container ul {
+  padding-left: 1.5rem;
+}
+
+/* Acordeón */
+.accordion-button {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f1f1f1;
+  color: #212529;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.accordion-body a {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #0d6efd;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.accordion-body a:hover {
+  text-decoration: underline;
+}
+
+.accordion-body p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}

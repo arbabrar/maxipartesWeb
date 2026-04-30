@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos | MAXIPARTES Bolivia</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/diseño.css">
+    <link rel="stylesheet" href="/assets/css/carusel-marcas.css">
+    <!-- Removed contactenos.css as we will use custom global styles -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/general/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    <!-- navbar.js applies dark mode ASAP -->
+    <script src="/assets/js/navbar.js"></script>
+
+    <style>
+        /* Specific Styles for Quienes Somos mimicking the reference */
+        .font-display { font-family: 'Outfit', sans-serif; }
+        .text-navy { color: var(--mp-navy); }
+        .dark .text-navy { color: #ffffff; }
+        
+        .hero-section {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 50px; /* offset for navbar */
+        }
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        .hero-gradient {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(30,34,53,0.95) 0%, rgba(30,34,53,0.5) 100%);
+            z-index: -1;
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(to right, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 100%);
+        }
+
+        .badge-primary {
+            background-color: var(--mp-red);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .btn-qs-primary {
+            background-color: var(--mp-red);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-qs-primary:hover {
+            background-color: #a81c1c;
+            color: white;
+            box-shadow: 0 4px 15px rgba(207,44,47,0.4);
+        }
+
+        .btn-qs-outline {
+            background-color: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-qs-outline:hover {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .border-l-primary {
+            border-left: 4px solid var(--mp-red);
+            padding-left: 1rem;
+        }
+
+        .img-grid-rounded {
+            border-radius: 1rem;
+            object-fit: cover;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .dark .img-grid-rounded {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .feature-box {
+            border-radius: 1rem;
+            padding: 2rem;
+            color: white;
+        }
+        .bg-navy-box { background-color: var(--mp-navy); }
+        .bg-primary-box { background-color: var(--mp-red); }
+
+        .partner-logo-box {
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            background: white;
+            padding: 1.5rem;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .partner-logo-box:hover {
+            filter: grayscale(0%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
+        .dark .partner-logo-box {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .dark .partner-logo-box:hover {
+            border-color: #475569;
+        }
+        .partner-logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .vision-card {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+        }
+        .dark .vision-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-light transition-colors duration-300">
+
+    <!-- NAVBAR COMPARTIDA -->
+    <div id="navbar-container"></div>
+
+    <!--Icono de Whatsapp-->
+    <a href="#" rel="noopener noreferrer"
+    class="whatsapp-float d-flex align-items-center justify-content-center btn-global-whatsapp">
+        <i class="bi bi-whatsapp" style="font-size: 2.5rem; color: white;"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Puedes cambiar esta imagen por una real de su almacén si la tienen -->
+        <img src="/assets/images/general/Logo_Maxipartes.jpg" alt="Almacén Automotriz" class="hero-image">
+        <div class="hero-gradient"></div>
+        
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="badge-primary mb-3 text-uppercase">Establecidos 2024</span>
+                    <h1 class="display-4 fw-bold text-white font-display mb-4" style="line-height: 1.1;">
+                        Impulsando la Excelencia a través de Conexiones Globales
+                    </h1>
+                    <p class="lead text-light mb-5" style="opacity: 0.9; max-width: 650px;">
+                        Somos actores clave en el sector de repuestos automotrices en Bolivia, apostando por la importación y comercialización de productos originales, certificados y de alto rendimiento.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#historia" class="btn-qs-primary">Nuestra Historia</a>
+                        <a href="#marcas" class="btn-qs-outline">Marcas Aliadas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia Section -->
+    <section id="historia" class="py-5 my-md-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="font-display text-navy fw-bold mb-4 display-6">Nuestro Legado en cada Repuesto</h2>
+                    <p class="text-secondary mb-4 fs-5" style="line-height: 1.7;">
+                        Maxipartes Bolivia S.R.L. se constituyó con una visión clara, una política de calidad rigurosa y una orientación permanente al cliente.
+                    </p>
+                    <p class="text-secondary mb-5" style="line-height: 1.7;">
+                        Desde nuestro establecimiento en Santa Cruz de la Sierra, nos hemos posicionado como socios estratégicos para talleres mecánicos, concesionarios, flotillas corporativas y consumidores particulares que priorizan la confiabilidad y durabilidad en sus vehículos.
+                    </p>
+                    
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="border-l-primary">
+                                <h4 class="text-navy fw-bold fs-2 mb-0">100%</h4>
+                                <p class="text-muted text-uppercase fw-semibold mb-0" style="font-size: 0.8rem; letter-spacing: 0.05em;">Calidad Original</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="border-l-primary">
+                                <h4 class="text-navy fw-bold fs-2 mb-0">10+</h4>
+                                <p class="text-muted text-uppercase fw-semibold mb-0" style="font-size: 0.8rem; letter-spacing: 0.05em;">Marcas Globales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-6 position-relative">
+                            <img src="/assets/images/nosotros/mision.webp" alt="Logística Automotriz" class="img-grid-rounded mb-4" style="height: 250px;">
+                            <div class="feature-box bg-primary-box shadow-lg">
+                                <i class="bi bi-globe-americas fs-1 mb-3 d-block"></i>
+                                <h3 class="h5 fw-bold mb-2 text-white">Red Internacional</h3>
+                                <p class="mb-0 text-white-50" style="font-size: 0.9rem;">Respondemos a las exigencias del mercado automotriz moderno.</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-box bg-navy-box shadow-lg mb-4 mt-md-4">
+                                <i class="bi bi-shield-check fs-1 mb-3 d-block text-white"></i>
+                                <h3 class="h5 fw-bold mb-2 text-white">Proveedor Integral</h3>
+                                <p class="mb-0 text-white-50" style="font-size: 0.9rem;">Gestión eficiente de la cadena logística y un portafolio genuino.</p>
+                            </div>
+                            <img src="/assets/images/nosotros/vision.webp" alt="Calidad Garantizada" class="img-grid-rounded" style="height: 250px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas Aliadas -->
+    <section id="marcas" class="py-5 bg-dark">
+        <div class="container py-md-4">
+            <div class="text-center mb-5">
+                <h2 class="text-white font-display fw-bold mb-3">Nuestras Marcas Aliadas</h2>
+                <p class="text-white-50 mx-auto" style="max-width: 600px;">
+                    Nos asociamos con los fabricantes automotrices más innovadores del mundo para garantizar que nuestros clientes reciban repuestos de calidad original.
+                </p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Most of these images exist in assets/images/marcas -->
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Toyota.webp" alt="Toyota"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Nissan.webp" alt="Nissan"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/logo-Chevrolet.webp" alt="Chevrolet"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/logo-Mitsubishi.webp" alt="Mitsubishi"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Hyundai.webp" alt="Hyundai"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Kia.webp" alt="Kia"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/logo-Foton.webp" alt="Foton"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Honda.webp" alt="Honda"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Suzuki.webp" alt="Suzuki"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Mazda.webp" alt="Mazda"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Subaru.webp" alt="Subaru"></div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="partner-logo-box"><img src="/assets/images/marcas/Logo-Great-Wall.webp" alt="Great Wall"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión (Replacing Team Section) -->
+    <section class="py-5 my-md-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-navy font-display fw-bold mb-3 display-6">Liderazgo & Compromiso</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 700px; line-height: 1.6;">
+                        Más que un proveedor, somos un aliado técnico y comercial comprometido con la calidad, el desempeño y la continuidad operativa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="vision-card">
+                        <i class="bi bi-bullseye text-primary fs-1 mb-4 d-block" style="color: var(--mp-red) !important;"></i>
+                        <h3 class="font-display fw-bold text-navy mb-3">Nuestra Misión</h3>
+                        <p class="text-secondary mb-0" style="line-height: 1.7;">
+                            Proveer repuestos automotrices originales y certificados que garanticen el rendimiento, la seguridad y la durabilidad de los vehículos de nuestros clientes. Nos comprometemos a ofrecer soluciones integrales a través de un portafolio de alta calidad, asesoramiento técnico personalizado y un servicio postventa eficiente, contribuyendo así a una movilidad más segura y confiable en todo el país.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="vision-card">
+                        <i class="bi bi-eye-fill text-primary fs-1 mb-4 d-block" style="color: var(--mp-red) !important;"></i>
+                        <h3 class="font-display fw-bold text-navy mb-3">Nuestra Visión</h3>
+                        <p class="text-secondary mb-0" style="line-height: 1.7;">
+                            Consolidarnos como la empresa líder y más confiable en el mercado boliviano de repuestos automotrices hacia el año 2028. Aspiramos a expandir nuestra cobertura nacional, innovar continuamente en procesos y productos, y ser reconocidos por la excelencia en nuestro servicio, la integridad de nuestras operaciones y nuestro compromiso con el desarrollo sostenible del sector automotor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-3">
+                <a href="/pages/catalogo.html" class="btn-qs-primary">Explorar Catálogo <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COMPARTIDO -->
+    <div id="footer-container"></div>
+
+    <!-- Referenciar Bootstrap JS al final -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/footer.js"></script>
+</body>
+</html>
