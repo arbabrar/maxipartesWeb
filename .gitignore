@@ -1,3 +1,10 @@
 cambio.md
 cambios.md
 PROYECTO_POS.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
